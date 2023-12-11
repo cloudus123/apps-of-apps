@@ -12,8 +12,9 @@ spec:
   project: default
   source:
     - chart: webapp
-    repoURL: 
+    repoURL: https://github.com/cloudus123/apps-of-apps.git
     targetRevision: 1.0.0
+    ref: values
 	helm:
 	  valueFiles:
 	  - $values/app/dev-values.yaml
