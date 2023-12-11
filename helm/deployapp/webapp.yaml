@@ -4,7 +4,7 @@ metadata:
   name: notes-app-deployment
   namespace: argocd
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
@@ -12,16 +12,16 @@ spec:
   project: default
   source:
     - chart: webapp
-    repoURL: https://github.com/cloudus123/apps-of-apps.git
-    path: ./apps-of-apps/helm/webapp/
-    targetRevision: 1.0.0
-    ref: values
-    helm:
-      valueFiles:
-      - $values/apps/dev
+      repoURL: https://github.com/cloudus123/apps-of-apps.git
+      path: ./apps-of-apps/helm/webapp/
+      targetRevision: 1.0.0
+      ref: values
+      helm:
+        valueFiles:
+          - $values/apps/dev
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-	syncOptions:
-	- CreateNamespace=true
+    syncOptions:
+      - CreateNamespace=true
