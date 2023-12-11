@@ -13,7 +13,7 @@ spec:
   source:
     - chart: webapp
     repoURL: https://github.com/cloudus123/apps-of-apps.git
-    path: ./apps-of-apps/helm/
+    path: ./apps-of-apps/helm/webapp/
     targetRevision: 1.0.0
     ref: values
     helm:
