@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName }}-{{ .Values.env }}
+  name: {{ printf "%s-%s" .Values.appName .Values.env }} 
   namspace: {{ .Values.env}}
   labels:
     app: notes-app
@@ -23,4 +23,4 @@ spec:
           cpu: "100m"
       imagePullPolicy: IfNotPresent
       ports:
-      - containerPort: 3000
+      - containerPort: 3000   
