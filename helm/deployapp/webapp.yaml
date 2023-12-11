@@ -13,11 +13,12 @@ spec:
   source:
     - chart: webapp
     repoURL: https://github.com/cloudus123/apps-of-apps.git
+    path: ./apps-of-apps/helm/
     targetRevision: 1.0.0
     ref: values
-	helm:
-	  valueFiles:
-	  - $values/app/dev-values.yaml
+    helm:
+      valueFiles:
+      - $values/apps/dev
   syncPolicy:
     automated:
       prune: true
