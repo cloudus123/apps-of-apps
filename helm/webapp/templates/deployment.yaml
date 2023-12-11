@@ -14,13 +14,13 @@ spec:
     metadata:
       labels:
         app: {{ .Values.appName }}
-    spec:
-      containers:
-      - name: {{ .Values.appName }}
-        image: pavansa/notes-app
-        resources:
-          requests:
-            cpu: "100m"
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 3000
+  spec:
+    containers:
+    - name: {{ .Values.appName }}
+      image: pavansa/notes-app
+      resources:
+        requests:
+          cpu: "100m"
+      imagePullPolicy: IfNotPresent
+      ports:
+      - containerPort: 3000
